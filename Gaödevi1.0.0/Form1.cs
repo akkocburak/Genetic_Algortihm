@@ -44,6 +44,7 @@ namespace Gaödevi1._0._0
             int generations = int.Parse(txtGenerations.Text);
             double elitismRate = double.Parse(txtElitismRate.Text);
 
+
             // Popülasyon oluştur
             Population population = new Population(populationSize);
             List<double> fitnessValues = new List<double>();
