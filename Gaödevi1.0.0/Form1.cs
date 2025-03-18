@@ -19,10 +19,6 @@ namespace Gaödevi1._0._0
             InitializeComponent();
         }
 
-       
-
-       
-        
         public static double FitnessFunction(double x, double y)
         {
             return Math.Pow(Math.Sin(3 * Math.PI * x), 2) +
