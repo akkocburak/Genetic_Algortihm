@@ -18,11 +18,15 @@ namespace Gaödevi1._0._0
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(txtPopulationSize, "Popülasyon boyutu pozitif bir tam sayı olmalıdır. ");
+            toolTip1.SetToolTip(txtCrossoverRate, "Çaprazlama oranı 0 ile 1 arasında olmalıdır.");
+            toolTip1.SetToolTip(txtMutationRate, "Mutasyon oranı 0 ile 1 arasında küçük bir değer olmalıdır.");
+            toolTip1.SetToolTip(txtElitismRate, "Seçkinlik oranı 0 ile 1 arasında olmalıdır.");
+            toolTip1.SetToolTip(txtGenerations, "Jenerasyon sayısı pozitif bir tam sayı olmalıdır.");
+        }
 
-       
-
-       
-        
         public static double FitnessFunction(double x, double y)
         {
             return Math.Pow(Math.Sin(3 * Math.PI * x), 2) +
@@ -65,8 +69,8 @@ namespace Gaödevi1._0._0
 
             // Sonucu ekranda göster
            
-            lblSonuc.Text = $"En iyi çözüm:\nX={best.X:F4}, Y={best.Y:F4}\n" +
-                   $"Amaç Fonksiyon Değeri: {objectiveValue:F6},\nFitness={best.Fitness:F4}";
+            lblSonuc.Text = $"En iyi çözüm:\tX={best.X:F4}, Y={best.Y:F4}\n" +
+                   $"Amaç Fonksiyon Değeri: {objectiveValue:F6}\nFitness={best.Fitness:F4}";
             DrawConvergenceGraph(fitnessValues);
         }
         private void DrawConvergenceGraph(List<double> fitnessValues)
