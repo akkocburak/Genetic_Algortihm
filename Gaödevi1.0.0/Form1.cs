@@ -51,7 +51,7 @@ namespace Gaödevi1._0._0
 
             for (int i = 0; i < generations; i++)
             {
-                population = population.GenerateNextGeneration(crossoverRate, mutationRate,elitismRate);
+                population = population.GenerateNextGeneration(crossoverRate, mutationRate, elitismRate);
 
                 // Her jenerasyonda en iyi çözümün fitness değerini alıyoruz
                 Individual best1 = population.GetBestIndividual();
@@ -69,9 +69,9 @@ namespace Gaödevi1._0._0
             double objectiveValue = FitnessFunction(best.X, best.Y);
 
             // Sonucu ekranda göster
-           
+
             lblSonuc.Text = $"En iyi çözüm:\tX={best.X:F4}, Y={best.Y:F4}\n" +
-                   $"Amaç Fonksiyon Değeri: {objectiveValue:F6}\nFitness={best.Fitness:F4}";
+                   $"Amaç Fonksiyon Değeri: {objectiveValue:F6}";//FİTNESS DEĞERİ İLE AMAÇ AYNI DEĞER
             DrawConvergenceGraph(fitnessValues);
         }
         private void DrawConvergenceGraph(List<double> fitnessValues)
