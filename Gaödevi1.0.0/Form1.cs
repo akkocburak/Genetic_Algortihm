@@ -46,15 +46,15 @@ namespace Gaödevi1._0._0
 
 
             // Popülasyon oluştur
-            Population population = new Population(populationSize);
+            Populasyon population = new Populasyon(populationSize);
             List<double> fitnessValues = new List<double>();
 
             for (int i = 0; i < generations; i++)
             {
-                population = population.GenerateNextGeneration(crossoverRate, mutationRate, elitismRate);
+                population = population.YeniNesilUret(crossoverRate, mutationRate, elitismRate);
 
                 // Her jenerasyonda en iyi çözümün fitness değerini alıyoruz
-                Individual best1 = population.GetBestIndividual();
+                Birey best1 = population.EnIyiBireyiGetir();
                 double objectiveValue1 = FitnessFunction(best1.X, best1.Y);
 
                 // Fitness değerini listeye ekliyoruz
@@ -63,7 +63,7 @@ namespace Gaödevi1._0._0
 
 
             // En iyi sonucu bul
-            Individual best = population.GetBestIndividual();
+            Birey best = population.EnIyiBireyiGetir();
 
             // Amaç fonksiyonunu hesapla
             double objectiveValue = FitnessFunction(best.X, best.Y);
